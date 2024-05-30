@@ -4,6 +4,7 @@ import { AltasRepartidorComponent } from './pages/altas-repartidor/altas-reparti
 import { loggedGuardGuard } from './guards/logged-guard.guard';
 import { RepartidorDetalleComponent } from './pages/repartidor-detalle/repartidor-detalle.component';
 import { SalenHeladosComponent } from './pages/salen-helados/salen-helados.component';
+import { adminGuardGuard } from './guards/admin-guard.guard';
 
 
 export const routes: Routes = [
@@ -14,16 +15,16 @@ export const routes: Routes = [
     {
         path: 'repartidor/alta',
         component: AltasRepartidorComponent,
-        // canActivate: [loggedGuardGuard]
+        canActivate: [loggedGuardGuard]
     },
     {
         path: 'repartidor/detalle',
         component: RepartidorDetalleComponent,
-        // canActivate: [loggedGuardGuard]
+        canActivate: [loggedGuardGuard]
     },
     {
         path: 'helados',
         component: SalenHeladosComponent,
-        // canActivate: [adminGuardGuard]
+        canActivate: [adminGuardGuard]
     },
 ];
