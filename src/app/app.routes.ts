@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { AltasRepartidorComponent } from './pages/altas-repartidor/altas-repartidor.component';
 import { loggedGuardGuard } from './guards/logged-guard.guard';
+import { RepartidorDetalleComponent } from './pages/repartidor-detalle/repartidor-detalle.component';
 
 
 export const routes: Routes = [
@@ -13,5 +14,10 @@ export const routes: Routes = [
         path: 'repartidor/alta',
         component: AltasRepartidorComponent,
         canActivate: [loggedGuardGuard]
-    }
+    },
+    {
+        path: 'repartidor/detalle',
+        component: RepartidorDetalleComponent,
+        canActivate: [loggedGuardGuard]
+    },
 ];

@@ -1,0 +1,28 @@
+
+<div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+        <span class="fs-4">Detalle Repartidores</span>
+    </header>
+
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <div class="container-fluid py-5">
+        <app-listado-repartidores
+          (rowClickIdEvent)="getIdRepartidor($event)"
+          (rowClickCountryEvent)="getPaisRepartidor($event)">
+        </app-listado-repartidores>
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <app-detalle-repartidor [idRepartidor]="idSelectedRepartidor"></app-detalle-repartidor>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+          <app-detalle-pais [nombrePais]="paisSelectedRepartidor"></app-detalle-pais>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+
+<h2>Detalle del Repartidor</h2>
+<p *ngIf="this.repartidor == null">Debe seleccionar un repartidor</p>
+<div class="flex" *ngIf="this.repartidor != null" [style.margin-top.px]="20">
+    <h4 [style.padding]="'10px 0'">{{this.repartidor.nombre}}</h4>
+    <p>DNI: {{this.repartidor.dni}}</p>
+    <p>Edad: {{this.repartidor.edad}} años</p>
+    <p>Capacidad de transporte: {{this.repartidor.capacidadDeTransporte}} potes de helado</p>
+    <p>País de origen: {{this.repartidor.pais}}</p>
+    <p>Posee unidad propia: {{renderBoolean(this.repartidor.unidadPropia)}}</p>
+</div>

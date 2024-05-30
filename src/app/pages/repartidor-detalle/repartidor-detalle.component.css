@@ -1,0 +1,19 @@
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.jumbotron {
+    max-width: 50vw;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.mini {
+    max-width: 25vw;
+}
+

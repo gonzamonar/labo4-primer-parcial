@@ -17,7 +17,7 @@ export class DataPaisesService {
   }
 
   fetchOne(pais: string): Observable<any> {
-    return this.http.get(this.API_URL +'name/' + pais);
+    return this.http.get(this.API_URL +'name/' + pais + '?fullText=true');
   }
 
 }

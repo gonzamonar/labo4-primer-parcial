@@ -1,0 +1,18 @@
+
+<h2 [style.color]="'#0d6efd'">País del Repartidor</h2>
+<p *ngIf="nombrePais == ''">Debe seleccionar un repartidor</p>
+
+<div class="flex" [style.margin-top.px]="20">
+    <div *ngIf="loading" class="spinner-border text-primary" role="status">
+        <span class="sr-only"></span>
+    </div>
+    <p *ngIf="API_error" [style.color]="'red'">La API no pudo responder a la solicitud.</p>
+    <div class="flex" *ngIf="pais != null">
+        <h3>{{pais.nombre}}</h3>
+        <img [src]="pais.banderaSrc" alt="pais.banderaAlt" [style.width]="'30%'" [style.padding]="'20px 0'">
+        <p>Nombre oficial: {{ pais.nombreOficial }}</p>
+        <p>Continente: {{ renderArray(pais.continentes) }}</p>
+        <p>Capital: {{ renderArray(pais.capitales) }}</p>
+        <p>Idiomas: {{ renderArray(pais.idiomas) }}</p>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+<div class="flex">
+    <h1 class="display-5 fw-bold">Listado de Repartidores</h1>
+    <p></p>
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let header of headers">{{header}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let repartidor of DataRepartidores" (click)="returnId(repartidor.dni)" (click)="returnCountry(repartidor.pais)">
+                <td>{{repartidor.dni}}</td>
+                <td>{{repartidor.nombre}}</td>
+                <td>{{repartidor.edad}}</td>
+                <td>{{repartidor.capacidadDeTransporte}}</td>
+                <td>{{repartidor.pais}}</td>
+                <td>{{renderBoolean(repartidor.unidadPropia)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
