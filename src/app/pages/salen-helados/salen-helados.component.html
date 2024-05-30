@@ -1,0 +1,18 @@
+
+<div class="container py-4">
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal">Salen Helados</h1>
+        <p class="fs-5 text-muted">Sistema de gestión de helados.</p>
+        <app-listado-helados (rowClickEvent)="seleccionarHelado($event)"></app-listado-helados>
+    </div>
+    
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    
+      <app-form-alta-helado (altaHeladoEvent)="crearHelado($event)"></app-form-alta-helado>
+
+      <app-modificacion-helado [inputHelado]="heladoSeleccionado"></app-modificacion-helado>
+
+      <app-baja-helado [inputHelado]="heladoSeleccionado"></app-baja-helado>
+
+    </div>
+</div>

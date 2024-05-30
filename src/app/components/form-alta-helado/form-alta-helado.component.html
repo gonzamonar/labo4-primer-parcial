@@ -1,0 +1,64 @@
+
+<div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Alta</h4>
+        </div>
+        <div class="card-body">
+            <form class="needs-validation" [formGroup]="form" (ngSubmit)="OnFormSubmitted()">
+                <div class="row g-3">
+                    <p>Next Id: {{this.nextId}}</p>
+                    <div class="col-12">
+                        <label for="sabor" class="form-label">Sabor</label>
+                        <input type="text" class="form-control" id="sabor" formControlName="sabor">
+                        <div *ngIf="isControlInvalid('sabor') && isControlTouched('sabor')" class="alert">
+                            <div *ngIf="getControlErrors('sabor')?.['required']"> Campo obligatorio.</div>
+                            <div *ngIf="getControlErrors('sabor')?.['pattern']"> Caracteres inválidos.</div>
+                            <div *ngIf="getControlErrors('sabor')?.['minlength']"> Mínimo 3 caracteres.</div>
+                            <div *ngIf="getControlErrors('sabor')?.['maxlength']"> Máximo 25 caracteres.</div>
+                        </div>
+                    </div>
+            
+                    <div class="col-12">
+                        <label for="tipo" class="form-label">Tipo</label>
+                        <div class="radio-container">
+                            <label class="form-check-label">Agua
+                                <input class="form-check-input" type="radio" name="tipo" [value]="'agua'" formControlName="tipo">
+                            </label>
+                            <label class="form-check-label">Crema
+                                <input class="form-check-input" type="radio" name="tipo" [value]="'crema'" formControlName="tipo">
+                            </label>
+                        </div>
+                    </div>
+            
+                    <div class="col-12">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="text" class="form-control" id="precio" formControlName="precio">
+                        <div *ngIf="isControlInvalid('precio') && isControlTouched('precio')" class="alert">
+                            <div *ngIf="getControlErrors('precio')?.['required']"> Campo obligatorio.</div>
+                            <div *ngIf="getControlErrors('precio')?.['pattern']"> Sólo se aceptan números.</div>
+                            <div *ngIf="getControlErrors('precio')?.['min']"> El precio no puede ser menor a $1.</div>
+                        </div>
+                    </div>
+            
+                    <div class="col-12">
+                        <label for="peso" class="form-label">Peso Aproximado</label>
+                        <input type="text" class="form-control" id="peso" formControlName="peso">
+                        <div *ngIf="isControlInvalid('peso') && isControlTouched('peso')" class="alert">
+                            <div *ngIf="getControlErrors('peso')?.['required']"> Campo obligatorio.</div>
+                            <div *ngIf="getControlErrors('peso')?.['pattern']"> Sólo se aceptan números.</div>
+                            <div *ngIf="getControlErrors('peso')?.['min']"> El peso mínimo es 250grs.</div>
+                            <div *ngIf="getControlErrors('peso')?.['max']"> El peso máximo son 1000grs.</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+                <hr class="my-4">
+            
+                <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!this.form.valid">Dar de Alta</button>
+            </form>
+        
+        </div>
+    </div>
+</div>

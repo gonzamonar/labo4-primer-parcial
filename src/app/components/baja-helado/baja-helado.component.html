@@ -1,0 +1,19 @@
+
+<div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+      <div class="card-header py-3 text-white bg-primary border-primary">
+        <h4 class="my-0 fw-normal">Baja</h4>
+      </div>
+      <div class="card-body">
+        <div *ngIf="inputHelado != null">
+          <p>Sabor: {{ inputHelado?.sabor }}</p>
+          <p>Tipo: {{ inputHelado?.tipo }}</p>
+          <p>Precio: $ {{ inputHelado?.precio }}</p>
+          <p>Peso: {{ inputHelado?.peso }} grs.</p>
+        </div>
+        <button (click)="eliminarHelado()" type="button" class="w-100 btn btn-lg btn-primary">Eliminar</button>
+      </div>
+    </div>
+ </div>
+
+ 

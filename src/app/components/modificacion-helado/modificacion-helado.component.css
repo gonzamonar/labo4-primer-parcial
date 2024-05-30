@@ -1,0 +1,26 @@
+
+.btn-submit:disabled {
+    background-color: #e9ecef;
+    border: 1px solid black;
+    color: black;
+}
+
+.alert {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: red;
+}
+
+.radio-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+}
+
+.radio-container label:hover,
+.radio-container input:hover {
+    cursor: pointer;
+}

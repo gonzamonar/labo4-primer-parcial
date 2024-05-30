@@ -1,0 +1,20 @@
+
+<div class="flex" *ngIf="DataHelados.length > 0">
+    <h4 class="display-5 fw-bold">Listado de Helados</h4>
+    <p></p>
+    <table>
+        <thead>
+            <tr>
+                <th *ngFor="let header of headers">{{header}}</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let helado of DataHelados">
+            <tr *ngIf="helado.peso > 0" (click)="returnHelado(helado)">
+                <td>{{helado.sabor}}</td>
+                <td>{{helado.tipo}}</td>
+                <td>{{helado.precio}}</td>
+                <td>{{helado.peso}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
