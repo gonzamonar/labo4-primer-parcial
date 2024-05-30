@@ -1,0 +1,15 @@
+
+
+.paises-container {
+    max-height: 80vh;
+    overflow-y: scroll;
+    overflow-x: none;
+    scroll-behavior: smooth;
+    scrollbar-color: rgba(13, 110, 253, 0.3) rgba(255,255,255,0.1);
+}
+
+.paises-container > ul > li:hover {
+    cursor: pointer;
+    background-color: #0d6efd;
+    color: white;
+}

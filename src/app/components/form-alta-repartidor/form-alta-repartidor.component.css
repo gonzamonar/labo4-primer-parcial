@@ -1,0 +1,18 @@
+
+
+.form-check-input:hover, .form-check-label:hover {
+    cursor: pointer;
+}
+
+.btn-submit:disabled {
+    background-color: #e9ecef;
+    border: 1px solid black;
+    color: black;
+}
+
+.alert {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: red;
+}

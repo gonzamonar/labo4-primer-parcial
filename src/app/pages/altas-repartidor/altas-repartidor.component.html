@@ -1,0 +1,24 @@
+
+
+<div class="container py-4">
+    <div class="py-5 text-center">
+        <h2>Alta de Repartidores</h2>
+        <p class="lead">Formulario para realizar el alta de repartidores.</p>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>País</span>
+          </h4>
+          <div>
+            <app-listado-paises (selectCountryEvent)="getPais($event)"></app-listado-paises>
+          </div>
+        </div>
+
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3" class="text-primary">Nuevo Repartidor</h4>
+          <app-form-alta-repartidor [inputPais]="paisSeleccionado"></app-form-alta-repartidor>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,66 @@
+
+<form class="needs-validation" [formGroup]="form" (ngSubmit)="OnFormSubmitted()">
+    <div class="row g-3" [style.margin-top.px]="20">
+      
+      <div class="col-12">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre">
+        <div *ngIf="isControlInvalid('nombre') && isControlTouched('nombre')" class="alert">
+            <div *ngIf="getControlErrors('nombre')?.['required']"> Campo obligatorio.</div>
+            <div *ngIf="getControlErrors('nombre')?.['pattern']"> Caracteres inválidos.</div>
+            <div *ngIf="getControlErrors('nombre')?.['minlength']"> Mínimo 3 caracteres.</div>
+            <div *ngIf="getControlErrors('nombre')?.['maxlength']"> Máximo 25 caracteres.</div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="dni" class="form-label">DNI</label>
+        <input type="text" class="form-control" id="dni" formControlName="dni">
+        <div *ngIf="isControlInvalid('dni') && isControlTouched('dni')" class="alert">
+          <div *ngIf="getControlErrors('dni')?.['required']"> Campo obligatorio.</div>
+          <div *ngIf="getControlErrors('dni')?.['pattern']"> Sólo se aceptan números.</div>
+          <div *ngIf="getControlErrors('dni')?.['min']"> El DNI debe ser un número positivo.</div>
+      </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="text" class="form-control" id="edad" formControlName="edad">
+        <div *ngIf="isControlInvalid('edad') && isControlTouched('edad')" class="alert">
+          <div *ngIf="getControlErrors('edad')?.['required']"> Campo obligatorio.</div>
+          <div *ngIf="getControlErrors('edad')?.['pattern']"> Sólo se aceptan números.</div>
+          <div *ngIf="getControlErrors('edad')?.['min']"> La edad mínima es 18.</div>
+          <div *ngIf="getControlErrors('edad')?.['max']"> La edad máxima es 99.</div>
+      </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="capacidadTransporte" class="form-label">Capacidad de Transporte</label>
+        <input type="text" class="form-control" id="capacidadTransporte" formControlName="capacidadTransporte">
+        <div *ngIf="isControlInvalid('capacidadTransporte') && isControlTouched('capacidadTransporte')" class="alert">
+          <div *ngIf="getControlErrors('capacidadTransporte')?.['required']"> Campo obligatorio.</div>
+          <div *ngIf="getControlErrors('capacidadTransporte')?.['pattern']"> Sólo se aceptan números.</div>
+          <div *ngIf="getControlErrors('capacidadTransporte')?.['min']"> La cantidad de potes no puede ser menor a 1.</div>
+      </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label for="pais" class="form-label">País</label>
+        <input type="text" class="form-control" id="pais" formControlName="pais">
+      </div>
+
+      <div class="col-12">
+        <label class="form-check-label" for="chkUnidadPropia" [style.margin-right.px]="10">
+          Tiene unidad propia:
+        </label>
+        <input class="form-check-input" type="checkbox" value="" id="chkUnidadPropia" formControlName="unidadPropia">
+      </div>
+
+    </div>
+
+    <hr class="my-4">
+
+    <button class="w-100 btn btn-primary btn-lg btn-submit" type="submit" [disabled]="!this.form.valid">Dar de Alta</button>
+  </form>
+
+  

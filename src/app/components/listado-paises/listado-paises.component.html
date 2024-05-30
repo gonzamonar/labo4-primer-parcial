@@ -1,0 +1,15 @@
+
+<div class="paises-container">
+  <p *ngIf="API_error" [style.color]="'red'">La API no pudo responder la solicitud.</p>
+  <div *ngIf="loading" class="spinner-border text-primary" role="status">
+    <span class="sr-only"></span>
+  </div>
+  <ul class="list-group mb-3" *ngIf="listadoPaises != null">
+      <li class="list-group-item d-flex justify-content-between lh-sm" *ngFor="let pais of listadoPaises" (click)="returnCountry(pais.nombre)">
+        <div>
+          <h6 class="my-0">{{pais.nombre}}</h6>
+        </div>
+        <img [src]="pais.banderaSrc" alt="pais.banderaAlt" [style.width]="'20%'">
+      </li>
+  </ul>
+</div>
